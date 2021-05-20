@@ -1,0 +1,132 @@
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 400%; left: -150%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+
+
+
+.drive_page{
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectbox{
+  z-index: 43;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+
+.selectbox h1{
+  width: 202px;
+  height: 40px;
+  background: rgba(255, 226, 104, 0.53);
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+  display: grid; 
+  place-content: center;
+  cursor: pointer;
+}
+
+.cities{
+background: rgba(255, 226, 104, 0.53);
+margin: 0.5em 0;
+padding: 0.4em;
+border-radius: 5px;
+display: flex;
+gap: 5px;
+flex-direction: column;
+overflow: auto;
+height: 50vh;
+}
+
+/* width */
+.cities::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.cities::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.cities::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.cities::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.cities button, .controls button{
+width: 100%;
+font-size: 16px;
+margin: 0.1em 0;
+outline: none;
+cursor: pointer;
+background-color: #ffb037;
+padding: 0.3em;
+border-radius: 5px;
+border: 0;
+}
+
+
+.cities.open{
+display: none;
+}
+
+.dnone{
+  display: none;
+}
+
+.fullScreen{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ffaf3748;
+  border: 0;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
